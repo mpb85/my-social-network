@@ -3,13 +3,13 @@
     background-color: cyan;
   }
 
-.item {
+.item a {
   color: white;
 }
 
-
+/*
 a:hover {
   color: crimson;
   background: greenyellow;
 }
-  
+*/
