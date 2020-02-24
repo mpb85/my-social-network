@@ -1,3 +1,26 @@
-.color {
-    background-color: red;
+.grid {
+    display: grid;
+    grid-template-columns: 3fr 10fr;
+    grid-auto-rows: 2em;
+    grid-gap: .5em;
+}
+
+.dialogs {
+
+}
+
+.dialogsItem .dialog {
+    padding: 7px;
+}
+
+.dialog a.active {
+    color: red;
+}
+
+.massages {
+
+}
+
+.massages .massage {
+    padding: 7px;
 }
