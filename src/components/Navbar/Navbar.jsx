@@ -6,9 +6,6 @@ const Navbar = () => {
     return (
         <nav className={`${s.nav} ${s.a}`}>
             <div className = {s.item}>
-                <NavLink exact to='/' activeClassName={s.active}>Home</NavLink>
-            </div>
-            <div className = {s.item}>
                 <NavLink to='/profile' activeClassName={s.active}>Profile</NavLink>
             </div>
             <div className ={`${s.item} ${s.active}`}>
