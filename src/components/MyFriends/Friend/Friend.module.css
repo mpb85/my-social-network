@@ -1,0 +1,19 @@
+.image {
+    display: block;
+    margin: 5px auto;
+    padding: 0px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.friend  {
+    box-shadow: 10px 10px 10px gray;
+    border-radius: 15%;
+    width: 60px;
+}
+
+.friendName {
+    font-size: 10px;
+    text-align: center ;
+}
+

@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
@@ -8,26 +7,34 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Route from "react-router-dom/es/Route";
-import  BrowserRouter from "react-router-dom/es/BrowserRouter";
-import Main from "./components/Main/Main";
+import BrowserRouter from "react-router-dom/es/BrowserRouter";
 import Switch from "react-router-dom/es/Switch";
 import NotFound from "./components/NotFound/NotFound";
+import DailyRoutine from "./components/DailyRoutine/DailyRoutine";
 
 
-const App = () => {
+
+const App = (props) => {
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
-                <Header/>
-                <Navbar/>
+
+                <Header />
+                <Navbar friends={props.state}/>
+
                 <Switch>
-                    <Route exact path="/" component={Main}/>
-                    <Route path="/dialogs" component={Dialogs}/>
-                    <Route path="/profile" component={Profile}/>
+                    <Route path ='/dialogs' render ={()=> <Dialogs setAddUser={props.setAddUser}
+                                                                   state={props.state}  />}/>
+
+                    <Route path="/profile" render ={ ()=> <Profile state={props.state} setAddNewPosts={props.setAddNewPosts}
+                                                                   setUpdateNewPostText={props.setUpdateNewPostText}
+                                                                                                                            />}/>
                     <Route path="/news" component={News}/>
                     <Route path="/music" component={Music}/>
+                    <Route path="/dailyrountine" component={DailyRoutine}/>
                     <Route component={NotFound}/>
                 </Switch>
+
             </div>
         </BrowserRouter>
     );

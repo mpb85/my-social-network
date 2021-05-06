@@ -6,7 +6,7 @@ const ProfileInfo = (props) => {
     return (
         <div>
             <div>
-                <img src='https://www.w3schools.com/howto/img_snow_wide.jpg'/>
+                <img src='https://media.mmo-champion.com/images/news/2018/november/159.jpg'/>
             </div>
             <div>
                 ava + my discription

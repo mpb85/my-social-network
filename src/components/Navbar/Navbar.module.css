@@ -1,11 +1,12 @@
 .nav {
     grid-area: n;
-    background-color: cyan;
+    background-color: gainsboro;
     padding: 20px;
   }
 
+
 .item a {
-  color: white;
+  color: gray;
     text-decoration: none;
 }
 .item a.active {
