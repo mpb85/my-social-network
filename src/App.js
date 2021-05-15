@@ -24,11 +24,9 @@ const App = (props) => {
 
                 <Switch>
                     <Route path ='/dialogs' render ={()=> <Dialogs setAddUser={props.setAddUser}
-                                                                   state={props.state}  />}/>
+                                                                   state={props.state} dispatch={props.dispatch} />}/>
 
-                    <Route path="/profile" render ={ ()=> <Profile state={props.state} setAddNewPosts={props.setAddNewPosts}
-                                                                   setUpdateNewPostText={props.setUpdateNewPostText}
-                                                                                                                            />}/>
+                    <Route path="/profile" render ={ ()=> <Profile state={props.state} dispatch={props.dispatch} />} />
                     <Route path="/news" component={News}/>
                     <Route path="/music" component={Music}/>
                     <Route path="/dailyrountine" component={DailyRoutine}/>

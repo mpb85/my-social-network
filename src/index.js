@@ -8,11 +8,7 @@ import App from "./App";
 
 
 let renderEntireTree = (state)=>{
-    debugger;
-    ReactDOM.render(<App state={state} setAddUser={store.setAddUser.bind(store)}
-                         setAddNewPosts={store.setAddNewPosts.bind(store)}
-                         setUpdateNewPostText={store.setUpdateNewPostText.bind(store)}
-                                                                                />, document.getElementById('root'));
+    ReactDOM.render(<App state={state} dispatch={store.dispatch.bind(store)} />, document.getElementById('root'));
 }
 
 debugger;

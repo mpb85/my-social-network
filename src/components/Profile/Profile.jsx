@@ -11,10 +11,7 @@ const Profile = (props) => {
 
         <div className={s.content}>
             <ProfileInfo/>
-            <MyPosts state = {props.state}
-                     setAddNewPosts={props.setAddNewPosts}
-                     setUpdateNewPostText={props.setUpdateNewPostText}
-            />
+            <MyPosts state = {props.state} dispatch={props.dispatch} />
         </div>
     );
 };

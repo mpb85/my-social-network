@@ -2,22 +2,22 @@ import React from 'react';
 import s from './Dialogs.module.css'
 import DialogItem from "./DialogItem/DialogsItem";
 import Message from "./Message/Message";
-
-
-
+import {addNewMassageDialogActionCreator, newTextBodyDialogActionCreator} from "../../Redux/dialogReducer";
 
 const Dialogs = (props) => {
 
+ let newTextBody = (e) =>{
+     let text = e.target.value;
+     props.dispatch(newTextBodyDialogActionCreator(text))
+ }
 
 
-    let addNameUser = React.createRef();
 
     let addUser = () => {
 
-        let text = addNameUser.current.value;
-
-        props.setAddUser(text);
+        props.dispatch(addNewMassageDialogActionCreator());
            };
+
    let massegePage = props.state.massegePage;
 
 
@@ -30,7 +30,7 @@ const Dialogs = (props) => {
             <div className={s.massages}>
                 {massegePage.dataMessage.map(el => { return <Message message={el.message}/>})}
             </div>
-            <textarea ref={addNameUser} ></textarea>
+            <textarea onChange={newTextBody}></textarea>
             <button onClick={ addUser }>Добавить новое сообщение></button>
 
         </div>

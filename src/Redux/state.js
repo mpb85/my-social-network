@@ -1,4 +1,5 @@
-
+import profileReducer from "./profileReducer";
+import dialogReducer from "./dialogReducer";
 
  const store = {
     _state: {
@@ -18,7 +19,8 @@
                 {id: 4, message: 'Где ты пропал?'},
                 {id: 5, message: 'Сегодня в 20:00?'},
                 {id: 6, message: 'Напонимаю что в четверг вечером курс по react'}
-            ]
+            ],
+            newTextBodyDialog: 'dddd'
         },
         profilePage: {
             posts: [
@@ -40,34 +42,10 @@
                 {name: 'Маргарита', image: 'https://mir-avatarok.3dn.ru/_si/0/78181166.png'},
             ]
         },},
+
      getState() {
          return this._state;
      },
-    setUpdateNewPostText(text) {
-debugger;
-        this._state.profilePage.newPostText = text;
-        this._refresh(this._state);
-    },
-
-    setAddNewPosts() {
-        let text = {
-            id: 6,
-            post: this._state.profilePage.newPostText
-        };
-        this._state.profilePage.posts.push(text);
-        this._state.profilePage.newPostText = '';
-        this._refresh(this._state);
-
-
-    },
-    setAddUser(user) {
-        let newUser = {
-            id:7,
-            name: user
-        };
-        this._state.massegePage.data.push(newUser);
-        this._refresh(this._state);
-    },
     _refresh(){
         debugger;
         const a ='';
@@ -77,7 +55,12 @@ debugger;
         this._refresh = observer;
     },
 
+     dispatch(action) {
 
+       this._state.massegePage = dialogReducer(this._state.massegePage, action);
+       this._state.profilePage = profileReducer(this._state.profilePage, action);
+         this._refresh(this._state);
+     }
 };
 
 

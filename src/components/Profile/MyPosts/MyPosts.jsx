@@ -1,19 +1,20 @@
 import React from 'react';
 import s from './MyPosts.module.css'
 import Post from './Post/Post';
+import {addNewPostActionCreator, updateNewPostTextActionCreator} from "../../../Redux/profileReducer";
 
 const MyPosts = (props) => {
 
 
     let newPostElement = React.createRef();
     let addPost = () => {
-        props.setAddNewPosts();
+        props.dispatch(addNewPostActionCreator());
     };
 
     let newAddWorld = () => {
         let text = newPostElement.current.value;
 
-        props.setUpdateNewPostText(text);
+        props.dispatch(updateNewPostTextActionCreator(text));
     }
     let posts = props.state.profilePage;
 
