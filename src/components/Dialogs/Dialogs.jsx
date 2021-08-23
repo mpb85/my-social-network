@@ -1,37 +1,40 @@
 import React from 'react';
 import s from './Dialogs.module.css'
-import DialogItem from "./DialogItem/DialogsItem";
 import Message from "./Message/Message";
-import {addNewMassageDialogActionCreator, newTextBodyDialogActionCreator} from "../../Redux/dialogReducer";
+import DialogItem from "./DialogItem/DialogsItem";
+
 
 const Dialogs = (props) => {
 
- let newTextBody = (e) =>{
-     let text = e.target.value;
-     props.dispatch(newTextBodyDialogActionCreator(text))
- }
+    let state = props.dialogsPage;
 
+    let messagesElements = state.messages.map(m => <Message message={m.message} id={m.id}/>);
+    let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
+    let newMessageBody = state.newMessageBody;
 
+    let onNewTextBody = (e) => {
+        let text = e.target.value;
+        props.newTextBody(text);
+    };
 
-    let addUser = () => {
-
-        props.dispatch(addNewMassageDialogActionCreator());
-           };
-
-   let massegePage = props.state.massegePage;
-
+    let onAddUserMessage = () => {
+        props.addUserMassege();
+        props.addUser();
+    };
 
     return (
         <div className={`${s.dialogs} ${s.grid}`}>
-            <div className={s.dialogsItem}>
-                {massegePage.data.map(el => {return <DialogItem name={el.name} id={el.id}/>
-                })}
+            <div className=''>
+                {dialogsElements}
             </div>
-            <div className={s.massages}>
-                {massegePage.dataMessage.map(el => { return <Message message={el.message}/>})}
+            <div className=''>
+                {messagesElements}
+                <div><textarea placeholder='Enter your message' value={newMessageBody}
+                               onChange={onNewTextBody}></textarea></div>
+                <div>
+                    <button onClick={onAddUserMessage}>Добавить новое сообщение></button>
+                </div>
             </div>
-            <textarea onChange={newTextBody}></textarea>
-            <button onClick={ addUser }>Добавить новое сообщение></button>
 
         </div>
     )

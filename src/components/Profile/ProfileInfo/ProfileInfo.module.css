@@ -1,0 +1,36 @@
+.coverImageContainer{
+    position: relative;
+}
+.itemHeaderCoverImage{
+    margin-top: 175px;
+    float: left;
+    overflow: visible;
+    width: auto;
+}
+
+
+.itemHeaderAvatar{
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: -90px;
+}
+
+
+.headerCoverImage{
+    height: 200px;
+    background-image: url("https://mythemestore.com/beehive-preview/wp-content/uploads/buddypress/members/3/cover-image/6102ec5511928-bp-cover-image.jpg");
+}
+.itemAvatar {
+    position: relative;
+}
+
+.itemAvatar  img{
+    width: 200px;
+    height: 200px;
+}
+
+.job img{
+    width: 200px;
+    height: 200px;
+}

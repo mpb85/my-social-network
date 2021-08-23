@@ -1,16 +1,14 @@
 .grid {
     display: grid;
     grid-template-columns: 3fr 10fr;
-    grid-auto-rows: auto;
-    grid-gap: .5em;
+    /*grid-auto-rows: auto;
+    grid-gap: .5em;*/
     background-color: gainsboro;
 
 }
 
-.dialogs {
 
-}
-
+/*
 .dialogsItem .dialog {
     padding: 7px;
 }
@@ -19,10 +17,6 @@
     color: red;
 }
 
-.massages {
-
-}
-
 .massages .massage {
     padding: 7px;
-}
+}*/

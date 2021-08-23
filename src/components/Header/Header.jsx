@@ -1,7 +1,5 @@
 import React from 'react';
 import s from './Header.module.css'
-import ProfilePicture from "../Profile/ProfilePicture/ProfilePicture";
-
 
 const Header = () => {
     return (

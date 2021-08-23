@@ -10,7 +10,8 @@ import dialogReducer from "./dialogReducer";
                 {id: 3, name: 'Артем'},
                 {id: 4, name: 'Катя'},
                 {id: 5, name: 'Маша'},
-                {id: 6, name: 'Яна'}
+                {id: 6, name: 'Яна'},
+
             ],
             dataMessage: [
                 {id: 1, message: 'Привет это мое первое сообщение в моей социальной сети'},
@@ -18,7 +19,8 @@ import dialogReducer from "./dialogReducer";
                 {id: 3, message: 'Чувак мож ну его этот карантин, го футбол'},
                 {id: 4, message: 'Где ты пропал?'},
                 {id: 5, message: 'Сегодня в 20:00?'},
-                {id: 6, message: 'Напонимаю что в четверг вечером курс по react'}
+                {id: 6, message: 'Напонимаю что в четверг вечером курс по react'},
+
             ],
             newTextBodyDialog: 'dddd'
         },
@@ -41,16 +43,18 @@ import dialogReducer from "./dialogReducer";
                 {name: 'Кристина', image: 'https://mir-avatarok.3dn.ru/_si/0/28861160.jpg'},
                 {name: 'Маргарита', image: 'https://mir-avatarok.3dn.ru/_si/0/78181166.png'},
             ]
-        },},
+        }
+    },
 
      getState() {
          return this._state;
      },
+
     _refresh(){
         debugger;
         const a ='';
     },
-    getSubscribe(observer) {
+    subscribe(observer) {
         debugger;
         this._refresh = observer;
     },
@@ -59,7 +63,7 @@ import dialogReducer from "./dialogReducer";
 
        this._state.massegePage = dialogReducer(this._state.massegePage, action);
        this._state.profilePage = profileReducer(this._state.profilePage, action);
-         this._refresh(this._state);
+       this._refresh(this._state);
      }
 };
 

@@ -4,6 +4,7 @@ import Friend from "./Friend/Friend";
 
 
 const MyFriends = (props) => {
+
    const friend = props.friends;
     return (
         <div className={s.grid}>
