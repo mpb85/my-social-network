@@ -32,6 +32,11 @@ const User = (props) => {
 
     return         <>
     <div>
+        {pages.map(p => {
+                return <span onClick={(e) => props.getNewUsers(p)}
+                             className={props.currentPage == p && s.currentPage || s.page}>{p}</span>
+            }
+        )}
         {
             props.users.map(u =>
                 <div className={s.userInfo} key={u.id}>
